@@ -1,5 +1,5 @@
 # sitereview
-Symantec Site Review Checker (CLI)
+Bulk Symantec Site Review Checker (CLI) for use within an environment with SSL decryption issues. 
 
 ### Description
 
@@ -13,30 +13,14 @@ This Python script focuses on the first portion, allowing Users to quickly query
 
 ### Usage
 
-Sitereview.py takes one mandatory positional argument, url, and submits it to the Site Review service:
-
-```
-usage: sitereview.py [-h] url
-
-positional arguments:
-  url         Submit domain/URL to Symantec's Site Review Service
-
-optional arguments:
-  -h, --help  show this help message and exit
-```
+Place a text file named `url.txt` into the same directory as the `sitereview.py` file. This text file should contain the URLs to check, one per line.
 
 ### Results
 
 Sample results, for a known-malicious domain:
 
 ```
-======================
-Symantec Site Review
-======================
-
-URL: http://brins.biz/
-Last Time Rated/Reviewed:  > 7 days
-Category: Malicious Sources/Malnets
+http://www.google.com/ , Search Engines/Portals
 ```
 ### Installation
 

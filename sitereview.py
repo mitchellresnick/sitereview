@@ -6,7 +6,6 @@ import json
 import requests
 import sys
 
-
 class SiteReview(object):
     def __init__(self):
         self.baseurl = "https://sitereview.bluecoat.com/resource/lookup"
@@ -37,24 +36,21 @@ class SiteReview(object):
 
 
 
-def main(url):
-    s = SiteReview()
-    response = s.sitereview(url)
-    s.check_response(response)
-    border = "=" * (len("Symantec Site Review") + 2)
+def main():
 
-    print("\n{0}\n{1}\n{0}\n".format(border, "Symantec Site Review"))
-    print("URL: {}\n{}\nCategory: {}\n".format(
-        s.url,
-        s.date,
-        s.category
-        )
-    )
+    f = open("url.txt")
+
+    for url in f:
+        s = SiteReview()
+        response = s.sitereview(url)
+        s.check_response(response)
+        print(s.url + " , " + s.category)
 
 
 if __name__ == "__main__":
-    p = ArgumentParser()
-    p.add_argument("url", help="Submit domain/URL to Symantec's Site Review")
-    args = p.parse_args()
+    main()
+    # p = ArgumentParser()
+    # p.add_argument("url", help="Submit domain/URL to Symantec's Site Review")
+    # args = p.parse_args()
 
-    main(args.url)
+    # main(args.url)
