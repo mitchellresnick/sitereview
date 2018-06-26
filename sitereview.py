@@ -8,7 +8,7 @@ import sys
 
 class SiteReview(object):
     def __init__(self):
-        self.baseurl = "https://sitereview.bluecoat.com/resource/lookup"
+        self.baseurl = "http://sitereview.bluecoat.com/resource/lookup"
         self.headers = {"User-Agent": "Mozilla/5.0", "Content-Type": "application/json"}
 
     def sitereview(self, url):
@@ -19,6 +19,7 @@ class SiteReview(object):
                 self.baseurl,
                 headers=self.headers,
                 data=json.dumps(payload),
+                verify=False,
             )
         except requests.ConnectionError:
             sys.exit("[-] ConnectionError: " \
