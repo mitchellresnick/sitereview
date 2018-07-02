@@ -72,7 +72,6 @@ def main():
 
     # we have to traverse the list backwards since we are deleting elements are we go through, this requires an output list that we can reverse and print later
     for x in range(len(urls)-1,-1,-1):
-        print("Analyzing: " + urls[x])
         # wait 5 seconds to prevent the server from giving a CAPTCHA
         time.sleep(5)
         s = SiteReview()
