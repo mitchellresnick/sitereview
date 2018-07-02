@@ -15,7 +15,10 @@ This Python script focuses on the first portion, allowing Users to quickly query
 
 Place a text file named `url.txt` into the same directory as the `sitereview.py` file. This text file should contain the URLs to check, one per line. The program will output a file named `output.txt` with the applicable categories. Please note that the program will **append** resluts to the file, so it there is an existing `output.txt` file, it will be added to.
 
-One you have the files ready, execute the program using: `python sitereview.py`.
+One you have the files ready, execute the program using: 
+```
+python sitereview.py
+```
 
 ## Results
 
